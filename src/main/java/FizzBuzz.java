@@ -1,26 +1,19 @@
 public class FizzBuzz {
     public static String of(int number) {
-        if (number % 3 == 0 && number % 5 == 0) {
-            return "FizzBuzz";
-        }
+        StringBuilder builder = new StringBuilder();
 
         if (number % 3 == 0) {
-            return "Fizz";
+            builder.append("Fizz");
         }
 
         if (number % 5 == 0) {
-            return "Buzz";
+            builder.append("Buzz");
         }
 
-        return String.valueOf(number);
-    }
+        if (builder.length() == 0) {
+            builder.append(number);
+        }
 
-    public static void main(String[] args) {
-        System.out.println(FizzBuzz.of(1));
-        System.out.println(FizzBuzz.of(3));
-        System.out.println(FizzBuzz.of(5));
-        System.out.println(FizzBuzz.of(6));
-        System.out.println(FizzBuzz.of(10));
-        System.out.println(FizzBuzz.of(15));
+        return builder.toString();
     }
 }
